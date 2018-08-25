@@ -1,0 +1,49 @@
+<app-menu-patient *ngIf="role === 'patient'"></app-menu-patient>
+<app-menu-doctor *ngIf="role === 'familyDoctor'"></app-menu-doctor>
+
+<div class="main">
+  <div class="container-fluid">
+    <h3>Examinations</h3>
+    <hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th> Date of examination </th>
+      <th> Diagnosis at MKB </th>
+      <th> Laboratory finding</th>
+      <th> RTC finding </th>
+      <th> EHO finding </th>
+      <th> Computed tomography</th>
+      <th> Magnetic resonance </th>
+      <th> Sent to a specialist </th>
+      <th> Illness </th>
+      <th> Bandage </th>
+      <th> Antibody Propylaxis </th>
+      <th> Type of therapy</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let examination of healthExaminations | paginate: {itemsPerPage: 5 , currentPage: page} ">
+      <td>{{examination.examinationID.dateOfExamination}} </td>
+      <td>{{examination.diagnosisAtMKB}} </td>
+      <td>{{examination.laboratory_Finding}} </td>
+      <td>{{examination.RTC_Finding}} </td>
+      <td>{{examination.EHO_Finding}} </td>
+      <td>{{examination.computed_Tomography}} </td>
+      <td>{{examination.magnetic_Resonance}} </td>
+      <td>{{examination.sent_To_A_specialist}} </td>
+      <td>{{examination.illness}} </td>
+      <td>{{examination.bandage}} </td>
+      <td>{{examination.antibody_Prophylaxis}} </td>
+      <td>{{examination.typeOfTherapy}} </td>
+      <td><button class="btn btn-info" (click)="showTherapy(examination.examinationID.dateOfExamination)">Therapy</button> </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls class="pagination" previousLabel="" nextLabel = "" (pageChange) = "page = $event" maxlength="5"></pagination-controls>
+<br/>
+  </div>
+  <button *ngIf="role === 'familyDoctor'" class="btn btn-primary" routerLink="../examinations/addNew">Add new examination</button>
+  <button type="submit" class="btn btn-secondary" (click)="goBack()">Go Back</button>
+</div>

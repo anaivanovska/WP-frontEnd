@@ -1,0 +1,111 @@
+<app-menu-doctor></app-menu-doctor>
+<div class="main">
+  <div class="container-fluid">
+    <h3>Add new health examination</h3>
+    <hr>
+
+  <form [formGroup]="newExaminationForm">
+    <div class="col-md-7">
+      <label>Diagnosis at MKB: </label>
+      <input type="text" class="form-control" formControlName="diagnosisAtMKB">
+    </div>
+
+    <div class="col-md-7">
+      <label>Laboratory finding: </label>
+      <input type="checkbox" class="custom-checkbox" formControlName="laboratory_Finding">
+    </div>
+
+    <div class="col-md-7">
+      <label>RTC finding: </label>
+      <input type="checkbox" class="custom-checkbox" formControlName="RTC_Finding">
+    </div>
+
+
+    <div class="col-md-7">
+      <label>EHO finding: </label>
+      <input type="checkbox" class="custom-checkbox" formControlName="EHO_Finding">
+    </div>
+
+    <div class="col-md-7">
+      <label>Computed tomography: </label>
+      <input type="checkbox" class="custom-checkbox" formControlName="computed_Tomography">
+    </div>
+
+
+    <div class="col-md-7">
+      <label>Magnetic resonance: </label>
+      <input type="checkbox" class="custom-checkbox" formControlName="magnetic_Resonance">
+    </div>
+
+    <div class="col-md-7">
+      <label>Sent to a specialist:</label>
+      <input type="checkbox" class="custom-checkbox" formControlName="sent_To_A_specialist">
+    </div>
+
+
+    <div class="col-md-7">
+      <label>Illness:</label>
+      <input type="checkbox" class="custom-checkbox" formControlName="illness">
+    </div>
+
+
+
+    <div class="col-md-7">
+      <label>Bandage:</label>
+      <input type="checkbox" class="custom-checkbox" formControlName="bandage">
+    </div>
+
+
+
+    <div class="col-md-7">
+      <label>Antibody prophylaxis:</label>
+      <input type="checkbox" class="custom-checkbox" formControlName="antibody_Prophylaxis">
+    </div>
+
+
+    <div class="col-md-7">
+      <label>Type of therapy:</label>
+      <input type="text" class="form-control" formControlName="typeOfTherapy">
+    </div>
+
+    <div class="col-md-7">
+      <label>Date of examination: </label>
+      <input class="form-control"  type="date" formControlName="dateOfExamination"/>
+    </div>
+
+    <div class="col-md-12">
+      <label>Therapy</label>
+      <div formArrayName="medicines">
+        <!-- Check the correct way to iterate your form array -->
+        <div *ngFor="let medicine of getFormArray().controls; let i=index" [formGroupName]="i" class="input-group">
+          <div class="row">
+          <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="medicineName"  placeholder="Name">
+          </div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control input-group-lg reg_name" formControlName="quantity"  placeholder="Quantity">
+          </div>
+          <div class="col-sm-4">
+            <select  formControlName="typeOfReception" class="form-control input-group-lg reg_name">
+              <option value="none"></option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </div>
+          </div>
+        <br>
+        </div>
+        <button type="button" class="btn btn-info" (click)="addInput()">+</button>
+
+      </div>
+      <br>
+    <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="!newExaminationForm.valid">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="goBack()">Go Back</button>
+      <br>
+    </div>
+  </form>
+  </div>
+</div>
+
+

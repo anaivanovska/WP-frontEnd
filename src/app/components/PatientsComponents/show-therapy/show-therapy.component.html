@@ -1,0 +1,29 @@
+<app-menu-patient *ngIf="role === 'patient'"></app-menu-patient>
+<app-menu-doctor *ngIf="role === 'familyDoctor'"></app-menu-doctor>
+
+<div class="main">
+  <div class="container-fluid">
+    <h3>Therapy</h3>
+    <hr>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+      <th>Name:</th>
+      <th>Quantity:</th>
+      <th>Type of reception:</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let medicine of medicines">
+      <td>{{medicine.medicineID.name}}</td>
+        <td>{{medicine.quantity}}</td>
+      <td>{{medicine.typeOfReception}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="col-md-12">
+      <br>
+  <button type="button" class="btn btn-secondary" (click)="goBack()">Go Back</button>
+    </div>
+</div>
+</div>

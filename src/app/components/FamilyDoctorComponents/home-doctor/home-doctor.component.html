@@ -1,0 +1,41 @@
+<app-menu-doctor></app-menu-doctor>
+<div class="main">
+<div class="container-fluid">
+  <h3>Welcome Dr. {{familyDoctor.firstName}} {{familyDoctor.lastName}} </h3>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a routerLink="../myProfile">
+          <img src="../../../../assets/doctor.png" alt="My Profile" style="width:70%">
+          <div class="caption">
+            <h4 style="text-align: center">My Profile</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a routerLink="../patients">
+          <img src="../../../../assets/patients1.png" alt="Patients" style="width:70%">
+          <div class="caption">
+            <h4 style="text-align: center">Patients</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a routerLink="../search">
+          <img src="../../../../assets/search.jpg" alt="Search" style="width:70%;">
+          <div class="caption">
+            <h4 style="text-align: center">Search</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+

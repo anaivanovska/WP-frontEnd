@@ -1,0 +1,23 @@
+<app-menu-patient *ngIf="role === 'patient'"></app-menu-patient>
+<app-menu-doctor *ngIf="role === 'familyDoctor'"></app-menu-doctor><div class="main">
+  <div class="container-fluid">
+    <h3>Patient Vaccines</h3>
+    <hr>
+<table  class="table table-hover">
+ <thead>
+    <tr>
+      <th> Date of vaccination</th>
+      <th> Name of vaccine </th>
+    </tr>
+ </thead>
+  <tr *ngFor="let vaccine of vaccines">
+    <td>{{vaccine.dateOfReceipt}}</td>
+    <td>{{vaccine.vaccineID.name}}</td>
+  </tr>
+</table>
+    <pagination-controls class="pagination" previousLabel="" nextLabel = "" (pageChange) = "page = $event" maxlength="4"></pagination-controls>
+  </div>
+
+  <button *ngIf="role === 'familyDoctor'" class="btn btn-primary" routerLink="../vaccines/addNew">Add new vaccine</button>
+  <button type="submit" class="btn btn-secondary" (click)="goBack()">Go Back</button>
+</div>

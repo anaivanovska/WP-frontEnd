@@ -1,0 +1,43 @@
+<app-menu-patient></app-menu-patient>
+<div class="main">
+  <div class="container-fluid">
+    <h3>Welcome {{patient.firstName}} {{patient.lastName}} </h3>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a routerLink="../myProfile">
+            <img src="../../../../assets/patient1.png" alt="My Profile" style="width:70%">
+            <div class="caption">
+              <h4 style="text-align: center">My Profile</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a routerLink="../examinations">
+            <img src="../../../../assets/examination1.png" alt="Patients" style="width:70%">
+            <div class="caption">
+              <h4 style="text-align: center">Examinations</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a routerLink="../vaccines">
+            <img src="../../../../assets/vaccine1.png" alt="Search" style="width:70%;">
+            <div class="caption">
+              <h4 style="text-align: center">Vaccines</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

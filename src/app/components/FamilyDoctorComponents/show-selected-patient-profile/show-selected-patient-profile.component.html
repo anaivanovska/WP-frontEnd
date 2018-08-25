@@ -1,0 +1,110 @@
+<app-menu-doctor></app-menu-doctor>
+<div class="main">
+  <div class="container-fluid">
+<div  *ngIf="selectedPatient !== undefined" class="form-group">
+  <h3>Patient details</h3>
+  <div class="row">
+    <div class="col-md-6">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">User ID:</h3>
+    </div>
+    <div class="panel-body">
+      {{selectedPatient.userId}}
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">First name</h3>
+    </div>
+    <div class="panel-body">
+      {{selectedPatient.firstName}}
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Last name</h3>
+    </div>
+    <div class="panel-body">
+      {{selectedPatient.lastName}}
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Email</h3>
+    </div>
+    <div class="panel-body">
+      {{selectedPatient.email}}
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Phone number</h3>
+    </div>
+    <div class="panel-body">
+      {{selectedPatient.phoneNumber}}
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Address</h3>
+  </div>
+  <div class="panel-body">
+    {{selectedPatient.address}}
+  </div>
+</div>
+
+
+  <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Birthday</h3>
+  </div>
+  <div class="panel-body">
+    {{selectedPatient.dateOfBirth}}
+  </div>
+  </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Profession</h3>
+      </div>
+      <div class="panel-body">
+        {{selectedPatient.profession}}
+      </div>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Marriage status</h3>
+      </div>
+      <div class="panel-body">
+        {{selectedPatient.marriageState}}
+      </div>
+    </div>
+
+    </div>
+
+    <div  class="col-md-6">
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Health Insurance</h3>
+        </div>
+        <div class="panel-body">
+          <label>Registration number: </label> <span> {{selectedPatient.healthInsurance.registrationNumber}}</span><br/>
+          <label>Legitimation number: </label> <span> {{selectedPatient.healthInsurance.healthLegitimationNumber}}</span><br/>
+          <label>Type of insurance: </label> <span> {{selectedPatient.healthInsurance.typeOfHealthProtection}}</span><br/>
+        </div>
+      </div>
+  </div>
+  </div>
+  <button type="button" class="btn btn-primary" routerLink="../{{selectedPatient.userId}}/examinations">Health Examinations</button>
+  <button type="button" class="btn btn-primary" routerLink="../{{selectedPatient.userId}}/vaccines">Vaccines</button>
+
+  <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
+</div>
+  </div>
+</div>

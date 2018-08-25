@@ -1,0 +1,73 @@
+<app-menu-admin></app-menu-admin>
+<div class="main">
+  <div class="container-fluid">
+    <h3>Add a new doctor</h3>
+    <hr>
+    <form [formGroup]="newDoctorForm">
+      <div class="col-md-7">
+        <label>User ID: </label>
+        <input class="form-control" type="text" formControlName="userId"/>
+      </div>
+
+      <div class="col-md-7">
+        <label>First name: </label>
+        <input class="form-control" type="text" formControlName="firstName"/>
+      </div>
+
+      <div class="col-md-7">
+        <label>Last name: </label>
+        <input class="form-control" type="text" formControlName="lastName"/>
+      </div>
+
+      <div class="col-md-7">
+        <label>Date of birth: </label>
+        <input class="form-control" type="date"  formControlName="dateOfBirth">
+      </div>
+      <div class="col-md-7">
+        <label>Email: </label>
+        <input class="form-control" formControlName="email">
+      </div>
+
+      <div class="col-md-7">
+        <label>Phonenumber: </label>
+        <input class="form-control" type="text" formControlName="phoneNumber" placeholder="000/000-000"/>
+      </div>
+
+      <div class="col-md-7">
+        <label>Address: </label>
+        <input class="form-control" type="text" formControlName="address"/>
+      </div>
+
+      <div class="col-md-7">
+        <label>Agreement with FZO: </label>
+        <select formControlName="agreement_with_FZO" class="form-control">
+          <option [value]= true> Yes </option>
+          <option [value]= false> No </option>
+        </select>
+      </div>
+
+      <div class="col-md-7">
+        <label>Specialty: </label>
+        <input class="form-control" type="text" formControlName="speciality"/>
+      </div>
+      <div class="col-md-7">
+        <label>Work time: </label>
+        <input class="form-control" type="text" formControlName="workTime"/>
+      </div>
+
+      <div class="col-md-7">
+        <hr/>
+        <label>Deputy Doctor: </label>
+        <select class="form-control" formControlName="deputyFamilyDoctor">
+          <option value="none"></option>
+          <option *ngFor="let familyDoctorID of familyDoctorsID" [value]="familyDoctorID">{{familyDoctorID}}</option>
+        </select>
+        <hr/>
+      </div>
+      <div class="col-md-7">
+        <button type="submit" class="btn btn-primary" [disabled]="!newDoctorForm.valid" (click)="saveChanges()">Save doctor</button>
+      </div>
+    </form>
+   <div class="col-md-12"> </div>
+  </div>
+</div>

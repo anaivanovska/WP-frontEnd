@@ -1,0 +1,82 @@
+<app-menu-patient></app-menu-patient>
+<div class="main">
+  <div class="container-fluid">
+    <h3>Edit my profile</h3>
+    <hr>
+    <form [formGroup]="editPatientForm" *ngIf="patient != undefined">
+      <div class="row">
+      <div class="col-md-6">
+      <div>
+        <label>User ID: </label>
+        <div class="form-control-plaintext"> {{patient.userId}}</div>
+      </div>
+      <div>
+        <label>First name: </label>
+        <input class="form-control" type="text" formControlName="firstName"/>
+      </div>
+      <div>
+        <label>Last name: </label>
+        <input class="form-control" type="text" formControlName="lastName"/>
+      </div>
+      <div>
+        <label>Email: </label>
+        <input class="form-control" formControlName="email">
+      </div>
+      <div>
+        <label>Phonenumber: </label>
+        <input class="form-control" type="text" formControlName="phoneNumber"/>
+      </div>
+      <div>
+        <label>Address: </label>
+        <input class="form-control" type="text" formControlName="address"/>
+      </div>
+      <div>
+        <label>Birthday: </label>
+        <input class="form-control" type="text" formControlName="dateOfBirth"/>
+      </div>
+      <div>
+        <label>Profession: </label>
+        <input class="form-control" type="text" formControlName="profession"/>
+      </div>
+      <div>
+        <label>Marriage status: </label>
+        <select formControlName="marriageState" class="form-control">
+          <option *ngFor="let marriageState of marriageStates" [value]="marriageState">{{marriageState}}</option>
+        </select>
+      </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Family Doctor:</h3>
+          </div>
+          <div class="panel-body">
+            <span><b>First name: </b></span> <span> {{patient.familyDoctor.firstName}}</span><br/>
+            <span><b>Last name: </b></span> <span> {{patient.familyDoctor.lastName}}</span><br/>
+            <span><b>Email: </b></span> <span> {{patient.familyDoctor.email}}</span><br/>
+            <span><b>Phone: </b></span> <span> {{patient.familyDoctor.phoneNumber}}</span><br/>
+            <span><b>Speciality: </b></span> <span> {{patient.familyDoctor.speciality}}</span><br/>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Health Insurance:</h3>
+          </div>
+          <div class="panel-body">
+            <span><b>Registration number: </b></span> <span> {{patient.healthInsurance.registrationNumber}}</span><br/>
+            <span><b>Legitimation number: </b></span> <span> {{patient.healthInsurance.healthLegitimationNumber}}</span><br/>
+            <span><b>Type of insurance: </b></span> <span> {{patient.healthInsurance.typeOfHealthProtection}}</span><br/>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-12">
+        <br>
+        <button type="submit" class="btn btn-primary" (click)="updatePatient()">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
+      </div>
+      </div>
+    </form>
+    <br>
+</div>
+</div>

@@ -1,0 +1,101 @@
+<app-menu-doctor></app-menu-doctor>
+<div class="main">
+  <div class="container-fluid">
+    <h3>Add a new patient</h3>
+    <hr>
+<form [formGroup]="newPatientForm" xmlns="http://www.w3.org/1999/html">
+
+      <div class="col-md-7">
+    <label>Health record number: </label>
+    <input class="form-control" type="text" formControlName="patientID">
+      </div>
+
+  <div class="col-md-7">
+    <label>First Name: </label>
+    <input class="form-control" type="text" formControlName="firstName">
+  </div>
+
+
+  <div class="col-md-7">
+    <label>Last Name: </label>
+    <input class="form-control" type="text" formControlName="lastName">
+  </div>
+
+  <div class="col-md-7">
+    <label>Email: </label>
+    <input class="form-control" type="text" formControlName="email">
+  </div>
+
+  <div class="col-md-7">
+    <label>Phone Number: </label>
+    <input class="form-control" type="text" formControlName="phoneNumber">
+  </div>
+
+  <div class="col-md-7">
+    <label>Address: </label>
+    <input class="form-control" type="text" formControlName="address">
+  </div>
+
+  <div class="col-md-7">
+    <label>Date of birth: </label>
+    <input class="form-control" type="date"  formControlName="dateOfBirth">
+  </div>
+
+  <div class="col-md-7">
+    <label>Gender: </label>
+    <select formControlName="gender" class="form-control">
+      <!--<option value="none"></option>-->
+      <option *ngFor="let gen of genderValues" [value]="gen">{{gen}}</option>
+    </select>
+  </div>
+
+
+  <div class="col-md-7">
+    <label>EMBG: </label>
+    <input class="form-control" type="text" formControlName="embg">
+  </div>
+
+  <div class="col-md-7">
+    <label>Profession: </label>
+    <input class="form-control" type="text" formControlName="proffesion">
+  </div>
+
+  <div class="col-md-7">
+    <label>Marrige state: </label>
+    <input class="form-control" type="text" formControlName="marrigeState">
+  </div>
+
+
+  <div class="col-md-7"><br>
+    <h4>Health Insurance</h4>
+    <hr>
+    <div>
+      <div>
+        <label>Legitimation number: </label>
+        <input class="form-control" type="text" formControlName="healthLegitimationNumber"/>
+      </div>
+      <div>
+        <label>Registration number: </label>
+        <input class="form-control" type="text" formControlName="registrationNumber"/>
+      </div>
+
+      <div>
+        <label>Activity ID: </label>
+        <input class="form-control" type="text" formControlName="activityID"/>
+      </div>
+
+      <div>
+        <label>Type Of health Protection: </label>
+        <input class="form-control"  type="text" formControlName="typeOfHealthProtection"/>
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-info" [disabled]="!newPatientForm.valid" (click)="savePatient()">Save Patient</button>
+    <br><br>
+  </div>
+
+
+
+</form>
+</div>
+</div>

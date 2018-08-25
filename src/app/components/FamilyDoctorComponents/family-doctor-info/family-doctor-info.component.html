@@ -1,0 +1,133 @@
+<app-menu-doctor></app-menu-doctor>
+<div class="main">
+<div class="container-fluid">
+<div class="row">
+<div  *ngIf="familyDoctor !== undefined" class="col-md-6">
+<h3>My information</h3>
+  <hr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">User ID</h3>
+    </div>
+    <div class="panel-body">
+      {{familyDoctor.userId}}
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">First name</h3>
+    </div>
+    <div class="panel-body">
+      {{familyDoctor.firstName}}
+    </div>
+  </div><div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Last name</h3>
+  </div>
+  <div class="panel-body">
+    {{familyDoctor.lastName}}
+  </div>
+</div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Email</h3>
+    </div>
+    <div class="panel-body">
+      {{familyDoctor.email}}
+    </div>
+  </div><div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Phone number</h3>
+  </div>
+  <div class="panel-body">
+    {{familyDoctor.phoneNumber}}
+  </div>
+</div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Address</h3>
+    </div>
+    <div class="panel-body">
+      {{familyDoctor.address}}
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Agreement with FZO</h3>
+    </div>
+    <div *ngIf="familyDoctor.agreement_with_FZO == true" class="panel-body">
+      Yes
+    </div>
+    <div *ngIf="familyDoctor.agreement_with_FZO == false" class="panel-body">
+      No
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Speciality</h3>
+    </div>
+    <div class="panel-body">
+      {{familyDoctor.speciality}}
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Working hours</h3>
+    </div>
+    <div class="panel-body">
+      {{familyDoctor.workTime}}
+    </div>
+  </div>
+</div>
+   <div *ngIf = "familyDoctor.deputyFamilyDoctor !== undefined" class="col-md-6">
+     <h3>Deputy doctor</h3>
+     <hr>
+     <div class="panel panel-info">
+     <div class="panel-heading">
+       <h3 class="panel-title">First name</h3>
+     </div>
+     <div class="panel-body">
+       {{familyDoctor.deputyFamilyDoctor.firstName}}
+     </div>
+   </div>
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Last name</h3>
+       </div>
+       <div class="panel-body">
+         {{familyDoctor.deputyFamilyDoctor.lastName}}
+       </div>
+     </div>
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Email</h3>
+       </div>
+       <div class="panel-body">
+         {{familyDoctor.deputyFamilyDoctor.email}}
+       </div>
+     </div>
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Phone number</h3>
+       </div>
+       <div class="panel-body">
+         {{familyDoctor.deputyFamilyDoctor.phoneNumber}}
+       </div>
+     </div>
+     <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Working hours</h3>
+       </div>
+       <div class="panel-body">
+         {{familyDoctor.deputyFamilyDoctor.workTime}}
+       </div>
+     </div>
+
+   </div>
+</div>
+  <button type="submit" class="btn btn-primary btn-block" (click)="goToEdit()">Edit my profile</button>
+  <br>
+  <!--<button type="button" (click)="logout()">Log out</button>-->
+  </div>
+</div>
+

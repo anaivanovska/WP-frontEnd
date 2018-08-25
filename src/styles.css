@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+/*body , html {*/
+  /*!*background-color: red;*!*/
+  /*position: fixed;*/
+  /*height: 100%;*/
+  /*!*background-repeat: no-repeat;*!*/
+  /*background-image: linear-gradient(rgba(33, 213, 201, 0.69), rgb(12, 94, 158));*/
+  /*!*background-image: linear-gradient(rgba(144, 6, 29, 0.582), rgb(144, 6, 30));*!*/
+/*}*/
+.main {
+  padding-top: 90px;  /*inache 70 treba*/
+  margin-left: 260px;
+  /*margin-top: 50px;*/
+  padding-right: 10px;
+}
+
+.image-home {
+  height:200px;
+  /*width: 240px;*/
+}
+
+.side-menu {
+  width: 250px!important;
+}
+
+label{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

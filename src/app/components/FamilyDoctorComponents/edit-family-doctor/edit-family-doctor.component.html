@@ -1,0 +1,65 @@
+<app-menu-doctor></app-menu-doctor>
+<div class="main">
+  <div class="container-fluid">
+    <h3>Edit my profile</h3>
+    <hr>
+<form [formGroup]="editDoctorInfoForm" *ngIf="familyDoctor != undefined">
+<div class="col-md-7">
+    <label>User ID: </label>
+    <div class="form-control-plaintext"> {{familyDoctor.userId}}</div>
+  </div>
+
+  <div class="col-md-7">
+    <label>First name: </label>
+    <input class="form-control" type="text" formControlName="firstName"/>
+  </div>
+
+  <div class="col-md-7">
+    <label>Last name: </label>
+    <input class="form-control" type="text" formControlName="lastName"/>
+  </div>
+  <div class="col-md-7">
+    <label>Email: </label>
+    <input class="form-control" formControlName="email">
+  </div>
+
+  <div class="col-md-7">
+    <label>Phone number: </label>
+    <input class="form-control" type="text" formControlName="phoneNumber"/>
+  </div>
+
+  <div class="col-md-7">
+    <label>Address: </label>
+    <input class="form-control" type="text" formControlName="address"/>
+  </div>
+
+  <div class="col-md-7">
+    <label>Agreement with FZO: </label>
+    <select formControlName="agreement_with_FZO" class="form-control">
+      <option [value]=true> Yes </option>
+      <option [value]=false> No </option>
+    </select>
+  </div>
+
+  <div class="col-md-7">
+    <label>Specialty: </label>
+    <input class="form-control" type="text" formControlName="specialty"/>
+  </div>
+  <div class="col-md-7">
+    <label>Work time: </label>
+    <input class="form-control" type="text" formControlName="workTime"/>
+  </div>
+
+  <div *ngIf = "familyDoctor.deputyFamilyDoctor !== undefined" class="col-md-7">
+    <hr/>
+    <label>Deputy Doctor: </label>
+    <input class="form-control" type="text" formControlName="deputyFamilyDoctorID">
+    <hr/>
+  </div>
+  <div class="col-md-7">
+  <button type="submit" class="btn btn-primary" (click)="saveChanges()">Save</button>
+  <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
+  </div>
+</form>
+</div>
+</div>
